@@ -8812,9 +8812,7 @@ Also return non-nil if it is the command `self-insert-command' is remapped to."
                 (looking-at-p "|?\n") ;; #1016
                 ;;(eq (char-after) ?\n)
                 )
-            (if (and reg-col (> reg-col (current-indentation)))
-                (setq offset (+ reg-col web-mode-code-indent-offset))
-              (setq offset (+ (current-indentation) web-mode-code-indent-offset)))
+            (setq offset (+ (current-indentation) web-mode-code-indent-offset))
             )
            ((not (eq curr-char ?\,))
             (setq offset (current-column)))
